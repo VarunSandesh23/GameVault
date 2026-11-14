@@ -1,0 +1,64 @@
+============================================================
+       Git Commands Used in the GameVault Project
+============================================================
+
+1. git init
+   - Initializes a new Git repository in the current directory.
+   - Creates a hidden .git folder to track changes.
+
+2. git add <file>
+   - Stages a file (adds it to the staging area) for the next commit.
+   - Example: git add index.html
+
+3. git commit -m "message"
+   - Records the staged changes as a new commit with a descriptive message.
+   - Example: git commit -m "Initial commit: add index.html and about.html"
+
+4. git branch -M main
+   - Renames the current branch to "main".
+   - The -M flag forces the rename even if the target name already exists.
+
+5. git checkout -b feature
+   - Creates a new branch named "feature" and switches to it immediately.
+   - Combines "git branch feature" and "git checkout feature" in one command.
+
+6. git checkout main
+   - Switches the working directory back to the "main" branch.
+
+7. git merge feature -m "message"
+   - Merges the "feature" branch into the current branch (main).
+   - Combines the changes from "feature" into "main".
+
+8. git log --oneline --graph --all
+   - Displays the commit history as a compact graph.
+   - --oneline: shows each commit on a single line.
+   - --graph: draws a text-based graph of the branch structure.
+   - --all: shows commits from all branches.
+
+9. git status
+   - Shows the current state of the working directory and staging area.
+   - Lists untracked, modified, and staged files.
+   - Used to verify that .gitignore rules are working correctly.
+
+10. git revert HEAD --no-edit
+    - Creates a new commit that undoes the changes from the most recent commit.
+    - --no-edit: uses the default revert commit message without opening an editor.
+    - Unlike git reset, git revert preserves the commit history.
+
+11. git remote add origin <url>
+    - Links the local repository to a remote repository on GitHub.
+    - "origin" is the conventional name for the primary remote.
+
+12. git push -u origin main
+    - Uploads the local "main" branch to the remote repository.
+    - -u (--set-upstream): sets up tracking so future pushes can use just "git push".
+
+============================================================
+       Additional Files
+============================================================
+
+.gitignore
+   - A special file that tells Git which files/folders to ignore.
+   - In this project it ignores:
+     * *.log   (all log files, e.g., debug.log)
+     * temp/   (the entire temp folder)
